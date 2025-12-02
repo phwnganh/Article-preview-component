@@ -13,6 +13,7 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: "Manrope";
+  position: relative;
 }
 
 .container {
@@ -89,7 +90,7 @@ body {
 
 .share-icon {
   background-color: hsl(210, 46%, 95%);
-
+  border: 1px solid hsl(210, 46%, 95%);
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -104,6 +105,58 @@ body {
   height: auto;
 }
 
+.share-icon:hover {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.share-icon:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.share-tab {
+  display: none;
+}
+
+.share-tab.active {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background-color: hsl(217, 19%, 35%);
+  padding: 18px 38px;
+  border-radius: 10px;
+  position: absolute;
+  right: -68px;
+}
+
+.share-tab.active::after {
+  content: "";
+  position: absolute;
+
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid hsl(217, 19%, 35%);
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.share-text {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #9daec2;
+}
+
+.social-icon {
+  display: flex;
+  gap: 16px;
+}
+
+.share-tab-mobile {
+  display: none;
+}
+
 @media (max-width: 768px) {
   body {
     max-width: 688px;
@@ -111,15 +164,56 @@ body {
 }
 
 @media (max-width: 576px) {
-    .container{
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .container-text{
-        margin: 32px 30px 18px;
-    }
+  .container-text {
+    margin: 32px 30px 0;
+  }
 
-    .container-img img{
-        border-radius: 10px 10px 0 0;
-    }
+  .container-img img {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .author-container {
+    margin-bottom: 18px;
+  }
+
+  .author-container.active .author {
+    display: none;
+  }
+
+  .author-container.active .share-tab-mobile {
+    display: flex !important;
+  }
+
+  .author-container.active .share-icon {
+    background-color: #6e8098;
+    border: 1px solid #6e8098;
+  }
+
+  .author-container.active .share-icon img {
+    filter: brightness(0) invert(1);
+  }
+  .share-tab {
+    display: none !important;
+  }
+
+  .share-tab-mobile {
+    display: none;
+  }
+
+  .author-container.active {
+    background-color: hsl(217, 19%, 35%);
+    padding: 22px 30px;
+    margin: 0 -30px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .author-container.active .share-tab-mobile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
 }
