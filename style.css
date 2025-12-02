@@ -40,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin: 30px 40px 0;
+  margin: 30px 40px;
 }
 
 .container-text .text-title {
@@ -107,9 +107,6 @@ body {
 @media (max-width: 768px) {
   body {
     max-width: 688px;
-  }
-  .container-text {
-    margin-bottom: 30px;
   }
 }
 
