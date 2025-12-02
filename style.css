@@ -105,11 +105,11 @@ body {
   height: auto;
 }
 
-.share-icon:hover {
+.share-icon.active {
   background-color: hsl(217, 19%, 35%);
 }
 
-.share-icon:hover img {
+.share-icon.active img {
   filter: brightness(0) invert(1);
 }
 

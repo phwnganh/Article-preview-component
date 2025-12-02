@@ -10,5 +10,6 @@ shareBtn.addEventListener("click", () => {
         authContainer.classList.toggle("active")
     }else{
         shareTab.classList.toggle("active")
+        shareBtn.classList.toggle("active")
     }
 })
