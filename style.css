@@ -13,7 +13,6 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: "Manrope";
-  position: relative;
 }
 
 .container {
@@ -21,6 +20,7 @@ body {
   background-color: white;
   border-radius: 10px;
   box-shadow: 10px 20px 30px #979797;
+  position: relative;
 }
 
 .container-img {
@@ -126,6 +126,7 @@ body {
   border-radius: 10px;
   position: absolute;
   right: -68px;
+  bottom: 95px;
 }
 
 .share-tab.active::after {
@@ -197,7 +198,7 @@ body {
     filter: brightness(0) invert(1);
   }
   .share-tab {
-    display: none !important;
+    display: none;
   }
 
   .share-tab-mobile {

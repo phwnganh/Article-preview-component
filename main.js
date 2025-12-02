@@ -1,19 +1,14 @@
 const shareBtn = document.querySelector(".share-icon");
 const shareTab = document.querySelector(".share-tab");
-const authContainer = document.querySelector(".author-container")
-if (window.innerWidth > 576) {
-  shareBtn.addEventListener("mouseenter", (e) => {
-    shareTab.classList.add("active");
-  });
+const authContainer = document.querySelector(".author-container");
+console.log("sharebtn: ", shareBtn);
+console.log("share tab: ", shareTab);
 
-  shareBtn.addEventListener("mouseleave", (e) => {
-    shareTab.classList.remove("active");
-  });
-}
 
-if(window.innerWidth <= 576){
-    shareBtn.addEventListener("click", e => {
+shareBtn.addEventListener("click", () => {
+    if(window.innerWidth <= 576){
         authContainer.classList.toggle("active")
-    })
-
-}
+    }else{
+        shareTab.classList.toggle("active")
+    }
+})
